@@ -1681,10 +1681,22 @@
       cursor: pointer;
       aspect-ratio: 1/1;
     }
+    /* Gym logo shimmer effect */
+    .gym-logo-shimmer {
+      position: relative;
+      animation: gym-logo-pulse 4s ease-in-out infinite;
+    }
+    @keyframes gym-logo-pulse {
+      0%, 100% { filter: drop-shadow(0 0 24px rgba(211,47,47,0.15)) brightness(1); }
+      50% { filter: drop-shadow(0 0 40px rgba(211,47,47,0.3)) drop-shadow(0 0 60px rgba(0,127,255,0.1)) brightness(1.08); }
+    }
+
+    /* Photo grid items - better face cropping */
     .photo-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), filter 0.4s;
     }
     .photo-item:hover img { transform: scale(1.08); }
@@ -1867,6 +1879,7 @@
       .stat-num { font-size: 2.4rem; }
       .footer-inner { justify-content: center; text-align: center; }
       .photo-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .photo-item { aspect-ratio: 3/4; }
       .video-grid { grid-template-columns: 1fr; }
       .media-tabs { flex-wrap: wrap; }
     }
@@ -2124,7 +2137,7 @@
         </div>
         <div class="about-visual reveal">
           <div class="about-img-frame" style="background:var(--surface); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:32px;">
-            <img src="photo12.png" alt="Team Tef Boxing official logo — Tristan Ellison Fitness boxing gym in Little Elm Texas" style="width:70%; height:auto; object-fit:contain; filter:drop-shadow(0 0 30px rgba(211,47,47,0.2)); border-radius:8px;"/>
+            <img src="photo12.png" alt="Team Tef Boxing official logo — Tristan Ellison Fitness boxing gym in Little Elm Texas" style="width:70%; height:auto; object-fit:contain; filter:drop-shadow(0 0 30px rgba(211,47,47,0.2)); border-radius:8px;" class="gym-logo-shimmer"/>
             <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-align:center; line-height:1.8;">
               Coach Tristan Ellison<br/>
               Little Elm, Texas
@@ -2145,10 +2158,10 @@
   <!-- ════════════════ LBT / ROOTS ════════════════ -->
   <section style="padding:100px 0; position:relative; z-index:2; background:var(--surface);" id="roots">
     <div class="wrap">
-      <div class="about-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="about-grid">
         <div class="about-visual reveal">
           <div class="about-img-frame" style="background:var(--surface2); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:32px;">
-            <img src="photo11.png" alt="Lewisville Boxing Team LBT official logo — Texas outline with boxing gloves, Coach Jamaal Lawson gym in Lewisville Texas" style="width:65%; height:auto; object-fit:contain; filter:drop-shadow(0 0 24px rgba(255,255,255,0.1)); border-radius:8px;"/>
+            <img src="photo11.png" alt="Lewisville Boxing Team LBT official logo — Texas outline with boxing gloves, Coach Jamaal Lawson gym in Lewisville Texas" style="width:65%; height:auto; object-fit:contain; filter:drop-shadow(0 0 24px rgba(255,255,255,0.1)); border-radius:8px;" class="gym-logo-shimmer"/>
             <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-align:center; line-height:1.8;">
               Coach Jamaal Lawson<br/>
               Lewisville, Texas
@@ -2576,7 +2589,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <img src="kongo.png" alt="Kongo Logo"/>
-          <span class="footer-brand-text">David Kasindi "Kongo"</span>
+          <span class="footer-brand-text">David Kasindi <span class="shimmer-text-red">"Kongo"</span></span>
         </div>
         <div class="footer-social">
           <a href="https://www.instagram.com/kongo_2.0/" target="_blank" rel="noopener" aria-label="Kongo on Instagram" class="social-link">
@@ -2590,7 +2603,7 @@
           </a>
         </div>
       </div>
-      <div class="footer-copy">&copy; <span id="year"></span> David Kasindi "Kongo" &middot; kongoboxing.com &middot; Frisco, TX &middot; DRC 🇨🇩</div>
+      <div class="footer-copy">&copy; <span id="year"></span> David Kasindi <span class="shimmer-text-red">"Kongo"</span> &middot; kongoboxing.com &middot; Frisco, TX &middot; DRC 🇨🇩</div>
     </div>
     <!-- SEO-rich footer content for search engines -->
     <div class="footer-seo">
