@@ -1,0 +1,12 @@
+# robots.txt for kongoboxing.com
+# David Kasindi "Kongo" — Professional Boxer
+
+User-agent: *
+Allow: /
+Disallow:
+
+# Sitemap
+Sitemap: https://www.kongoboxing.com/sitemap.xml
+
+# Crawl-delay (optional, be generous to crawlers)
+Crawl-delay: 1
